@@ -7,3 +7,4 @@ def get_project_root() -> Path:
 
 DATA_DIRECTORY = get_project_root() / 'data'
 ALL_MODELS_FILE = DATA_DIRECTORY / 'all_models.csv'
+TOP_MODELS_FILE = DATA_DIRECTORY / 'top_1000_models.csv'
