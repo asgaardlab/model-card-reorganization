@@ -14,3 +14,7 @@ python repo_lister.py
 ```bash
 python repo_selector.py
 ```
+3. Run `repo_readme_collector.py` to download readme files from the selected top 1000 model repositories. The readme files will be saved inside the `data/readmes` directory. Each raw readme files will be saved inside `data/readmes/raw` directory. The further processed () readme files will be saved inside `data/readmes/processed` directory.
+```bash
+python repo_readme_collector.py
+```
