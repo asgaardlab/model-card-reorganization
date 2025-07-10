@@ -10,3 +10,7 @@ pip install -r requirements.txt
 ```bash
 python repo_lister.py
 ```
+2. Run `repo_selector.py` to select top 1000 models. The list of models will be saved in `top_1000_models.csv` inside the `data` directory.
+```bash
+python repo_selector.py
+```
