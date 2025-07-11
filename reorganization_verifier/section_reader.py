@@ -65,8 +65,8 @@ def get_subsection_content(model_card_path: Path, section_index: int, subsection
 
 if __name__ == '__main__':
     model_id = 'ai21labs/AI21-Jamba-1.5-Mini'
-    run_no = 14
-    reorganized_model_card_path = path.REORGANIZED_MODEL_CARD_DIRECTORY / 'exp_gemini' / f'run_{run_no}' / f'{helper.get_repo_dir_name(model_id)}.md'
+    run_no = 1
+    reorganized_model_card_path = path.REORGANIZED_MODEL_CARD_DIRECTORY / f'run_{run_no}' / f'{helper.get_repo_dir_name(model_id)}.md'
 
     for i, (section_header, subsection_headers) in enumerate(section_subsection_headers.items()):
         section_content = get_section_content(reorganized_model_card_path, i)
