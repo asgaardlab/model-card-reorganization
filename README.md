@@ -1,6 +1,7 @@
 # model-card-reorganization
 Python 3.11. Did not check backward compatibility
 
+## Select model cards from Hugging Face repositories
 1. Install the required packages
 ```bash
 pip install -r requirements.txt
@@ -18,3 +19,9 @@ python repo_selector.py
 ```bash
 python repo_readme_collector.py
 ```
+4. Run `readme_selector.py` to process and select quality model cards. The selected readme files' list will be saved as `selected_repos.csv` inside `data` directory.
+```bash
+python readme_selector.py
+```
+
+## Reorganize model cards
