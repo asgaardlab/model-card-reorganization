@@ -40,3 +40,13 @@ def get_readme_length(model_id: str) -> int:
 
 def save_top_model_list(top_models: DataFrame) -> None:
     top_models.to_csv(path.TOP_MODELS_FILE, index=False)
+
+
+def get_model_card(model_id: str) -> str:
+    model_card_path = path.PREPROCESSED_MODEL_CARD_DIRECTORY / f'{get_repo_dir_name(model_id)}.md'
+
+    if not model_card_path.exists():
+        raise FileNotFoundError(f'No model card found for {model_id}')
+
+    with open(model_card_path, 'r', encoding='utf-8') as f:
+        return f.read().strip()
