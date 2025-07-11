@@ -25,3 +25,7 @@ python readme_selector.py
 ```
 
 ## Reorganize model cards
+Run `gemini_reorganizer.py` to reorganize the selected model cards. The reorganized model cards will be saved inside `data/reorganized` directory.
+```bash
+python gemini_reorganizer.py
+```
