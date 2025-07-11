@@ -1,10 +1,16 @@
 TOP_N = 1000
 
 GEMINI_2_FLASH_THINKING = 'gemini-2.0-flash-thinking-exp-01-21' # VertexAI
+GEMINI_2_5_PRO = 'gemini-2.5-pro-preview-05-06' # VertexAI
 GEMINI_API_KEY = ''
 
 GPT_4O_MINI = 'gpt-4o-mini-2024-07-18' # OpenAI
+O4_MINI = 'o4-mini-2025-04-16' # OpenAI
 OPENAI_API_KEY = ''
+
+DEEPINFRA_DEEPSEEK_R1 = 'deepseek-ai/DeepSeek-R1' # DeepInfra
+DEEPINFRA_BASE_URL = 'https://api.deepinfra.com/v1/openai'
+DEEPINFRA_API_KEY = ''
 
 section_subsection_headers = {
     '## Model Details': [
