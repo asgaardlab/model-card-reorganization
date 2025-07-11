@@ -1,4 +1,8 @@
 import ast
+import os
+import re
+from pathlib import Path
+
 import pandas as pd
 from pandas import DataFrame
 from util import path
@@ -50,3 +54,22 @@ def get_model_card(model_id: str) -> str:
 
     with open(model_card_path, 'r', encoding='utf-8') as f:
         return f.read().strip()
+
+
+def get_selected_repos() -> DataFrame:
+    return pd.read_csv(path.SELECTED_REPOS_FILE)
+
+
+def get_next_iteration_no(base_dir: Path, prefix="run_") -> int:
+    if not base_dir.exists():
+        return 1
+    pattern = re.compile(rf'^{prefix}(\d+)$')
+
+    existing_iterations = [
+        int(pattern.match(d).group(1))
+        for d in os.listdir(base_dir)
+        if os.path.isdir(os.path.join(base_dir, d)) and pattern.match(d)
+    ]
+
+    next_iteration_no = max(existing_iterations, default=0) + 1
+    return next_iteration_no
