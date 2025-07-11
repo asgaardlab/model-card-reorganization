@@ -2,6 +2,7 @@ import ast
 import pandas as pd
 from pandas import DataFrame
 from util import path
+from util.md_processor import remove_codeblock
 
 
 def get_top_model_list(top_n: int = 1000) -> DataFrame:
@@ -21,3 +22,21 @@ def get_top_model_list(top_n: int = 1000) -> DataFrame:
 
 def get_repo_dir_name(model_id: str) -> str:
     return model_id.replace("/", "@")
+
+
+def get_readme_length(model_id: str) -> int:
+    readme_path = path.PREPROCESSED_MODEL_CARD_DIRECTORY / f'{get_repo_dir_name(model_id)}.md'
+
+    if not readme_path.exists():
+        return 0
+
+    with open(readme_path, 'r', encoding='utf-8') as readme_file:
+        readme = readme_file.read()
+
+    readme = remove_codeblock(readme)
+    readme_words = readme.split()
+    return len(readme_words)
+
+
+def save_top_model_list(top_models: DataFrame) -> None:
+    top_models.to_csv(path.TOP_MODELS_FILE, index=False)
