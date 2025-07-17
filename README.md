@@ -11,7 +11,7 @@ pip install -r requirements.txt
 ```bash
 python data_collector/repo_lister.py
 ```
-2. Run `data_collector/repo_selector.py` to order the models and select top 1000 models. The list of the top models will be saved in `top_1000_models.csv` inside the `data` directory.
+2. Run `data_collector/repo_selector.py` to order the models and select top 1000 models. The list of the top models will be saved in `data/top_1000_models.csv`.
 ```bash
 python data_collector/repo_selector.py
 ```
