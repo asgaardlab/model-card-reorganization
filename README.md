@@ -7,13 +7,13 @@ pip install -r requirements.txt
 ```
 
 ## Select model cards from Hugging Face repositories
-1. Run `repo_lister.py` to list all the model cards in the repository. The file will be saved as `all_models.csv` inside the `data` directory.
+1. Run `data_collector/repo_lister.py` to list all the models available in Hugging Face. A file named `all_models.csv` with the model list will be created  inside the `data` directory.
 ```bash
-python repo_lister.py
+python data_collector/repo_lister.py
 ```
-2. Run `repo_selector.py` to select top 1000 models. The list of models will be saved in `top_1000_models.csv` inside the `data` directory.
+2. Run `data_collector/repo_selector.py` to order the models and select top 1000 models. The list of the top models will be saved in `top_1000_models.csv` inside the `data` directory.
 ```bash
-python repo_selector.py
+python data_collector/repo_selector.py
 ```
 3. Run `repo_readme_collector.py` to download readme files from the selected top 1000 model repositories. The readme files will be saved inside the `data/readmes` directory. Each raw readme files will be saved inside `data/readmes/raw` directory. The further processed () readme files will be saved inside `data/readmes/processed` directory.
 ```bash
