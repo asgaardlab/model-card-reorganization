@@ -21,7 +21,11 @@ python data_collector/repo_readme_collector.py
 ```
 4. Run `data_collector/readme_selector.py` to process and select automated quality model cards. The list will be saved in `data/top_one_model_per_organization.csv`.
 ```bash
-python readme_selector.py
+python data_collector/readme_selector.py
+```
+5. Manually verify models listed in `data/top_one_model_per_organization.csv` and list the unwanted models in `data/excluding_repos.csv`. If you don't have any unwanted models, just leave it empty with a `model_id` as header of the file. Now, Run `data_collector/exclude_unwamted_repos.py` to get the final selected list of quality model cards saved in `data/selected_repos.csv`.
+```bash
+python data_collector/exclude_unwanted_repos.py
 ```
 
 ## Reorganize model cards
