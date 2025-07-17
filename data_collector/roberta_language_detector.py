@@ -21,7 +21,11 @@ def preprocess_model_card(text: str) -> str:
 
 
 def get_model_card_language(model_id: str, pipe: pipeline, top_k: int = 1) -> str:
-    model_card = helper.get_model_card(model_id)
+    try:
+        model_card = helper.get_model_card(model_id)
+    except FileNotFoundError:
+        print(f'No model card found for {model_id}')
+        return 'unknown'
 
     preprocessed_model_card = preprocess_model_card(model_card)
     return get_language(preprocessed_model_card, pipe, top_k)
