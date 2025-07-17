@@ -19,7 +19,7 @@ python data_collector/repo_selector.py
 ```bash
 python data_collector/repo_readme_collector.py
 ```
-4. Run `readme_selector.py` to process and select quality model cards. The selected readme files' list will be saved as `selected_repos.csv` inside `data` directory.
+4. Run `data_collector/readme_selector.py` to process and select automated quality model cards. The list will be saved in `data/top_one_model_per_organization.csv`.
 ```bash
 python readme_selector.py
 ```

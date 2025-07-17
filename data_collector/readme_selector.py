@@ -64,5 +64,4 @@ if __name__ == '__main__':
     detect_if_base_model()
 
     select_repos(constants.TOP_N, 1000)
-    # List repositories that contain a list of unwanted models
-    exclude_unwanted_repos()
+    print('Manually verify models listed in "data/top_one_model_per_organization.csv" and list the unwanted models in "data/excluding_repos.csv". If you don\'t have any unwanted models, just leave it empty.')
