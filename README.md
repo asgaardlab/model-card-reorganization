@@ -35,3 +35,12 @@ python model_card_reorganizer/gemini_reorganizer.py
 ```
 The reorganization instruction and template structure with section description is available in `model_card_reorganizer/gemini_prompt_template.md` and `model_card_reorganizer/model_card_template_with_description.md` respectively.
 
+## Verify Reorganization
+### Make checklist
+
+### Run LLM Jury
+#### Run Gemini 2.5 Pro Juror
+
+#### Run O4-mini Juror
+
+### Run DeepSeek R1 Juror
