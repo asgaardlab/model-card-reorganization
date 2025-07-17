@@ -33,4 +33,5 @@ Run `model_card_reorganizer/gemini_reorganizer.py` to reorganize the selected mo
 ```bash
 python model_card_reorganizer/gemini_reorganizer.py
 ```
-```
+The reorganization instruction and template structure with section description is available in `model_card_reorganizer/gemini_prompt_template.md` and `model_card_reorganizer/model_card_template_with_description.md` respectively.
+
