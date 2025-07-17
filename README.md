@@ -37,6 +37,11 @@ The reorganization instruction and template structure with section description i
 
 ## Verify Reorganization
 ### Make checklist
+Run `model_card_info_lister/gpt_4o_mini_lister.py` to create checklists of information from the original model cards. The checklists will be saved in `data/readmes/info_list` directory.
+```bash
+python model_card_info_lister/gpt_4o_mini_lister.py
+```
+The instruction for the checklist creation is available in `model_card_info_lister/system_instruction.md`.
 
 ### Run LLM Jury
 #### Run Gemini 2.5 Pro Juror
