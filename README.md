@@ -29,7 +29,7 @@ python data_collector/exclude_unwanted_repos.py
 ```
 
 ## Reorganize model cards
-Run `gemini_reorganizer.py` to reorganize the selected model cards. The reorganized model cards will be saved inside `data/reorganized` directory.
+Run `model_card_reorganizer/gemini_reorganizer.py` to reorganize the selected model cards. The reorganized model cards will be saved inside `data/readmes/reorganized` directory. Insert your API key into the `GEMINI_API_KEY` placeholder in the `util/constants.py` file to enable Gemini model access. 
 ```bash
-python gemini_reorganizer.py
+python model_card_reorganizer/gemini_reorganizer.py
 ```

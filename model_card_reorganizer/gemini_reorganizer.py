@@ -7,10 +7,10 @@ from util import path, helper, constants
 
 class GeminiModelCardReorganizer(LLMPipeline):
     def get_prompt(self, model_id: str) -> str:
-        with open('gemini_prompt_template.md', 'r') as file:
+        with open(path.REORGANIZER_DIRECTORY / 'gemini_prompt_template.md', 'r') as file:
             prompt_template = file.read()
 
-        with open('model_card_template_with_description.md', 'r') as file:
+        with open(path.REORGANIZER_DIRECTORY / 'model_card_template_with_description.md', 'r') as file:
             model_card_template = file.read()
 
         prompt = (f'{prompt_template}'
