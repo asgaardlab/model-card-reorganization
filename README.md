@@ -1,4 +1,4 @@
-# model-card-reorganization
+# <span style="font-variant: small-caps;">MCTidy</span>: Automating the Reorganization of Model Cards to Enforce Template Consistency
 ## Setup environment
 Python 3.11. Did not check backward compatibility
 1. Install the required packages
