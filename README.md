@@ -1,11 +1,10 @@
 # <span style="font-variant: small-caps;">MCTidy</span>: Automating the Reorganization of Model Cards to Enforce Template Consistency
 ## Setup environment
-Works with Python 3.11; backward compatibility has not been tested.
-1. Install the required packages
+Install the required packages
 ```bash
 pip install -r requirements.txt
 ```
-
+Works with Python 3.11; backward compatibility has not been tested.
 ## Select model cards from Hugging Face repositories
 1. Run `data_collector/repo_lister.py` to list all the models available in Hugging Face. A file named `all_models.csv` with the model list will be created  inside the `data` directory.
 ```bash
