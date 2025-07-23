@@ -1,6 +1,6 @@
 # <span style="font-variant: small-caps;">MCTidy</span>: Automating the Reorganization of Model Cards to Enforce Template Consistency
 ## Setup environment
-Python 3.11. Did not check backward compatibility
+Works with Python 3.11; backward compatibility has not been tested.
 1. Install the required packages
 ```bash
 pip install -r requirements.txt
