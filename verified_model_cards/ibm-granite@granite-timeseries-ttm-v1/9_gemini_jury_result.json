@@ -1,0 +1,164 @@
+{
+  "sections": [
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Person or organization developing model",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Model date",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Model Details: Model version",
+      "irrelevant_information": "Does not sufficiently explain how TTM-1 differs from newer variants (TTM-B, TTM-E, TTM-A) in terms of improvements, bug fixes, additional features, or architectural changes. Also does not explain how the model differs from other similar models."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Model Details: Model type",
+      "irrelevant_information": "Architecture details, core components, how they work, model size, and supported context length are not directly included or explained in this subsection; it only refers to the paper for architecture and other sections for size/context."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Model Details: Training details",
+      "irrelevant_information": "Lacks detail on specific training algorithms, key parameters, hyperparameters, fairness constraints, optimization techniques, or specific methodologies beyond 'various augmentations'. Does not provide enough depth to fully understand how the model achieved its current state."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Model Details: Paper or other resource for more information",
+      "irrelevant_information": "Does not briefly summarize the content of the listed resources or their specific relevance to understanding the model."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Citation details",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Model Details: License",
+      "irrelevant_information": "Does not specify the particular open source license, outline user permissions/restrictions, or provide a link to the full license text."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Model Details: Contact",
+      "irrelevant_information": "Lists model card authors but does not provide a contact email or other specific communication channels for user inquiries, issue reporting, or feedback."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Intended Use: Primary intended uses",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Intended Use: Primary intended users",
+      "irrelevant_information": "Too general. Does not specify types of users (e.g., researchers, developers, businesses), their expected level of expertise, or more detailed typical use cases for these users."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Intended Use: Out-of-scope uses",
+      "irrelevant_information": "Does not provide examples of related technologies or contexts that might lead to confusion, nor does it suggest alternative models for out-of-scope uses."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "How to Use",
+      "irrelevant_information": "Does not explicitly detail the input-output structure or provide sample input-outputs."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Factors: Relevant factors",
+      "irrelevant_information": "Does not explain how these factors were identified or provide a detailed explanation of why they are important beyond general statements."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Factors: Evaluation factors",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Metrics: Model performance measures",
+      "irrelevant_information": "Does not explicitly name the specific performance metrics used (e.g., MSE, MAE). Does not justify the selection of these metrics or explain why they are suitable."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Decision thresholds",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Metrics: Variation approaches",
+      "irrelevant_information": "Does not explain the specific methods used to calculate or estimate performance metrics (e.g., cross-validation, bootstrapping) or mention any uncertainty measures."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Evaluation Data: Datasets",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Evaluation Data: Motivation",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Evaluation Data: Preprocessing",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Training Data: Datasets",
+      "irrelevant_information": "Lists datasets and links but does not provide details on their size, structure, features, or diversity within the model card."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Training Data: Motivation",
+      "irrelevant_information": "Does not adequately justify the choice of datasets or highlight their specific suitability for the model's purpose and intended applications beyond stating they are 'publicly available time series data'."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Training Data: Preprocessing",
+      "irrelevant_information": "Lacks detail and explanation of preprocessing steps beyond 'Data scaling'. Does not provide other examples or explain how these steps improved training efficiency or accuracy."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Quantitative Analyses: Unitary results",
+      "irrelevant_information": "Presents benchmark comparisons against other models rather than systematically presenting performance results for each individual factor (context length, forecast length, time-series resolution, impact of data scaling variations) identified in the Factors section."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Quantitative Analyses: Intersectional results",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Memory or Hardware Requirements: Loading Requirements",
+      "irrelevant_information": "Does not specify concrete memory requirements (e.g., RAM/VRAM size, disk space) for loading the model, only general hardware like '1 GPU machine or laptops'."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Memory or Hardware Requirements: Deploying Requirements",
+      "irrelevant_information": "Does not specify concrete memory requirements (e.g., RAM/VRAM size, disk space) for deploying or serving the model, only general hardware like '1 GPU machine or laptops'."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Memory or Hardware Requirements: Training or Fine-tuning Requirements",
+      "irrelevant_information": "Does not specify memory requirements (e.g., RAM/VRAM size) for fine-tuning on a 1 GPU machine or for pretraining, although GPU type for pretraining is mentioned."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Ethical Considerations",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Caveats and Recommendations: Caveats",
+      "irrelevant_information": "While it lists current model limitations, it does not include other types of caveats mentioned in the description, such as gaps in evaluation datasets, suggestions for future testing or research, or ideal characteristics of datasets for further evaluation."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Caveats and Recommendations: Recommendations",
+      "irrelevant_information": "Provides some best practices but does not suggest areas for further testing or provide recommendations specifically aimed at mitigating risks beyond operational ones."
+    }
+  ]
+}

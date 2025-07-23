@@ -1,0 +1,164 @@
+{
+  "sections": [
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Person or organization developing model",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Model date",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Model version",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Model type",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Training details",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Paper or other resource for more information",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Citation details",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: License",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Contact",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Intended Use: Primary intended uses",
+      "irrelevant_information": "Missing examples of how the model can be applied in real-world scenarios. The input-output structure is also not explicitly explained in this section."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Intended Use: Primary intended users",
+      "irrelevant_information": "Missing description of the expected level of expertise and typical use cases for the primary intended users (commercial and research users)."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Intended Use: Out-of-scope uses",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "How to Use",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Factors: Relevant factors",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Factors: Evaluation factors",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Metrics: Model performance measures",
+      "irrelevant_information": "Missing justification for the selection of 'Human preference rankings and translation task performance' as metrics and why they are more suitable than other potential metrics."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Decision thresholds",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Variation approaches",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Evaluation Data: Datasets",
+      "irrelevant_information": "Missing details about the 'Human evaluation datasets and multilingual evaluation datasets for translation tasks' such as their size, diversity, source, and whether they are publicly available or proprietary."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Evaluation Data: Motivation",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Evaluation Data: Preprocessing",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Training Data: Datasets",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Training Data: Motivation",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Training Data: Preprocessing",
+      "irrelevant_information": "The description of preprocessing is limited to the prompting style used for training. It lacks details on other common preprocessing steps (e.g., text tokenization, data cleaning, filtering) and an explanation of how these steps might have improved training efficiency or accuracy."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Quantitative Analyses: Unitary results",
+      "irrelevant_information": "The results presented are general performance evaluations (human preference, translation tasks) and are not explicitly linked to individual factors that should have been identified in the 'Factors' section (which is 'Not available'). The description requires performance results for each identified factor."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Quantitative Analyses: Intersectional results",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Memory or Hardware Requirements: Loading Requirements",
+      "irrelevant_information": "Missing specific memory requirements (e.g., RAM/VRAM size, disk space). It only mentions the general type of hardware (GPU/RDU) without specifying quantities or capacities needed to load the model."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Memory or Hardware Requirements: Deploying Requirements",
+      "irrelevant_information": "Missing specific memory requirements (e.g., RAM/VRAM size) for deploying the model. It only mentions the general type of hardware (GPU/RDU) without specifying quantities or capacities."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Memory or Hardware Requirements: Training or Fine-tuning Requirements",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Ethical Considerations",
+      "irrelevant_information": "The section primarily lists model limitations (risks in model usage) but lacks information on: whether sensitive data was used during development; detailed risk mitigation strategies employed during development; likelihood and severity of identified risks; specific affected groups; concrete efforts made to address ethical challenges beyond listing limitations; and areas requiring further exploration."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Caveats and Recommendations: Caveats",
+      "irrelevant_information": "The content is a general statement referring to risks, biases, limitations, and restrictions listed elsewhere ('at the bottom of the page') rather than directly listing specific caveats not addressed earlier, gaps in evaluation datasets, or suggestions for future testing or research as per the description."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Caveats and Recommendations: Recommendations",
+      "irrelevant_information": "Recommendations are limited to specific inference parameters. Missing broader best practices for using the model, suggestions for areas for further testing, and explicit guidance on how these recommendations help in maximizing the model’s benefits while mitigating risks."
+    }
+  ]
+}

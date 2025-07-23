@@ -1,0 +1,164 @@
+{
+  "sections": [
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Person or organization developing model",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Model date",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Model version",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Model Details: Model type",
+      "irrelevant_information": "The table with columns 'Training Data', 'Params', 'Content Length', 'GQA', 'Tokens', 'LR' includes 'Training Data' (source of data), 'Tokens' (amount of training data), and 'LR' (learning rate), which are details related to the training process or dataset characteristics rather than the model's type, architecture, or core components. 'Params', 'Content Length', and 'GQA' from this table are relevant to model type."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Model Details: Training details",
+      "irrelevant_information": "The 'Vocab Expansion' table describes a model/data characteristic (vocabulary size and changes) rather than the training process, algorithms, or hyperparameters. In the second table (with columns 'Training Data', 'Params', 'Content Length', 'GQA', 'Tokens', 'LR'), the 'Params' (model size) and 'Content Length' (context window) are model specifications, and 'GQA' (Grouped Query Attention) is an architectural feature; these are not primarily details of the training process itself. 'Training Data', 'Tokens', and 'LR' from this table are relevant."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Paper or other resource for more information",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Citation details",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: License",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Contact",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Intended Use: Primary intended uses",
+      "irrelevant_information": "The content describes the model's characteristics (e.g., 'advanced iteration of Llama 2', 'expanded vocabulary', 'Korean corpus') and its general category ('generative text models') rather than its primary intended uses, specific tasks, domains, or real-world application examples as requested by the description."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Intended Use: Primary intended users",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Intended Use: Out-of-scope uses",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "How to Use",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Factors: Relevant factors",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Factors: Evaluation factors",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Model performance measures",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Decision thresholds",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Variation approaches",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Evaluation Data: Datasets",
+      "irrelevant_information": "'Open LLM Leaderboard' is listed as a dataset, but it is an evaluation platform or a collection of benchmark results, not a dataset in itself."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Evaluation Data: Motivation",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Evaluation Data: Preprocessing",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Training Data: Datasets",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Training Data: Motivation",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Training Data: Preprocessing",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Quantitative Analyses: Unitary results",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Quantitative Analyses: Intersectional results",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Memory or Hardware Requirements: Loading Requirements",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Memory or Hardware Requirements: Deploying Requirements",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Memory or Hardware Requirements: Training or Fine-tuning Requirements",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Ethical Considerations",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Caveats and Recommendations: Caveats",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Caveats and Recommendations: Recommendations",
+      "irrelevant_information": "None"
+    }
+  ]
+}

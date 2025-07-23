@@ -1,0 +1,164 @@
+{
+  "sections": [
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Person or organization developing model",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Model date",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Model Details: Model version",
+      "irrelevant_information": "The subsection only specifies the model version ('v2-1') but does not explain how it differs from other versions or similar models within this subsection, as requested by the description. Some related information is in 'Training details'."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Model type",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Training details",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Model Details: Paper or other resource for more information",
+      "irrelevant_information": "The subsection provides links to resources but does not briefly summarize the content of these resources and their relevance to understanding the model, as suggested by the description ('If available, briefly summarize...')."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Citation details",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Model Details: License",
+      "irrelevant_information": "The subsection provides the license name and a link but does not outline what users can and cannot do with the model or highlight restrictions directly in the text, as suggested by the description."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Contact",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Intended Use: Primary intended uses",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Intended Use: Primary intended users",
+      "irrelevant_information": "The subsection identifies 'Researchers' as primary users but does not describe their expected level of expertise or typical use cases in detail, as requested by the description."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Intended Use: Out-of-scope uses",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "How to Use",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Factors: Relevant factors",
+      "irrelevant_information": "The subsection lists language as a relevant factor and explains its importance but does not explain how this factor was identified, as requested by the description."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Factors: Evaluation factors",
+      "irrelevant_information": "The subsection describes the evaluation methodology (DDIM steps, prompts, dataset, resolution) rather than indicating which specific factors (e.g., language, as mentioned in 'Relevant factors') were analyzed and reported during model evaluation, as requested by the description."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Metrics: Model performance measures",
+      "irrelevant_information": "The subsection mentions 'relative improvements' and that the model is 'Not optimized for FID scores' but does not explicitly name the primary metrics used to assess effectiveness for these improvements, nor does it justify the selection of these metrics, as requested by the description."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Decision thresholds",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Variation approaches",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Evaluation Data: Datasets",
+      "irrelevant_information": "The subsection names the dataset (COCO2017 validation set) but does not provide further details such as its size, diversity, or specific source information directly in the text, as suggested by the description to include 'every details available'."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Evaluation Data: Motivation",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Evaluation Data: Preprocessing",
+      "irrelevant_information": "The subsection mentions evaluation resolution ('Evaluated at 512x512 resolution.') but does not describe other potential preprocessing steps in detail with explanation, nor how these steps align with the model's design, as requested by the description."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Training Data: Datasets",
+      "irrelevant_information": "The subsection names the dataset (LAION-5B and subsets) and mentions filtering but does not provide detailed information on its overall size (beyond 'LAION-5B'), structure, features, or diversity beyond the NSFW aspect, as suggested by the description to include 'every details available'."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Training Data: Motivation",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Training Data: Preprocessing",
+      "irrelevant_information": "The subsection mentions NSFW filtering but does not describe other preprocessing steps (e.g., image resizing, text tokenization, aesthetic filtering mentioned elsewhere) in detail with explanation within this specific subsection, nor does it explain how these steps improved training efficiency or accuracy, as requested by the description."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Quantitative Analyses: Unitary results",
+      "irrelevant_information": "The subsection presents a Pareto chart and discusses evaluations based on classifier-free guidance scales and DDIM sampling steps for checkpoints, but it does not present performance results for the individual factor (language) identified in the 'Factors: Relevant factors' section, as requested by the description."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Quantitative Analyses: Intersectional results",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Memory or Hardware Requirements: Loading Requirements",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Memory or Hardware Requirements: Deploying Requirements",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Memory or Hardware Requirements: Training or Fine-tuning Requirements",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Ethical Considerations",
+      "irrelevant_information": "The section discusses sensitive data, risks, mitigation strategies, and fraught use cases but does not explicitly acknowledge areas requiring further exploration, as suggested by the description."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Caveats and Recommendations: Caveats",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Caveats and Recommendations: Recommendations",
+      "irrelevant_information": "The subsection provides best practices for usage and risk mitigation advice but does not suggest specific areas for further testing, as indicated as a component of recommendations in the description."
+    }
+  ]
+}

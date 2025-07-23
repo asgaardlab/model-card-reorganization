@@ -1,0 +1,259 @@
+## Reorganized Model Card:
+
+## Model Details
+This section provides fundamental information about the model, helping stakeholders understand its context and key characteristics.
+
+### Person or organization developing model:
+See [GitHub Repo](https://github.com/facebookresearch/fairseq/tree/main/examples/roberta) for model developers
+
+### Model date:
+Not available.
+
+### Model version:
+This model is a fine-tuned version of the RoBERTa large model. Users should see the [RoBERTa large model card](https://huggingface.co/roberta-large) for relevant information.
+
+### Model type:
+Transformer-based language model
+
+### Training details:
+As described in the [RoBERTa large model card](https://huggingface.co/roberta-large):
+
+> The texts are tokenized using a byte version of Byte-Pair Encoding (BPE) and a vocabulary size of 50,000. The inputs of
+> the model take pieces of 512 contiguous token that may span over documents. The beginning of a new document is marked
+> with `<s>` and the end of one by `</s>`
+>
+> The details of the masking procedure for each sentence are the following:
+> - 15% of the tokens are masked.
+> - In 80% of the cases, the masked tokens are replaced by `<mask>`.
+> - In 10% of the cases, the masked tokens are replaced by a random token (different) from the one they replace.
+> - In the 10% remaining cases, the masked tokens are left as is.
+>
+> Contrary to BERT, the masking is done dynamically during pretraining (e.g., it changes at each epoch and is not fixed).
+
+Also as described in the [RoBERTa large model card](https://huggingface.co/roberta-large):
+
+> The model was trained on 1024 V100 GPUs for 500K steps with a batch size of 8K and a sequence length of 512. The
+> optimizer used is Adam with a learning rate of 4e-4, \\(\beta_{1} = 0.9\\), \\(\beta_{2} = 0.98\\) and
+> \\(\epsilon = 1e-6\\), a weight decay of 0.01, learning rate warmup for 30,000 steps and linear decay of the learning
+> rate after.
+
+### Paper or other resource for more information:
+- [Research Paper](https://arxiv.org/abs/1907.11692)
+- [GitHub Repo](https://github.com/facebookresearch/fairseq/tree/main/examples/roberta)
+
+### Citation details:
+```bibtex
+@article{liu2019roberta,
+    title = {RoBERTa: A Robustly Optimized BERT Pretraining Approach},
+    author = {Yinhan Liu and Myle Ott and Naman Goyal and Jingfei Du and
+              Mandar Joshi and Danqi Chen and Omer Levy and Mike Lewis and
+              Luke Zettlemoyer and Veselin Stoyanov},
+    journal={arXiv preprint arXiv:1907.11692},
+    year = {2019},
+}
+```
+
+### License:
+MIT
+
+### Contact:
+Not available.
+
+---
+
+## Intended Use
+This section outlines the intended applications of the model.
+
+### Primary intended uses:
+This fine-tuned model can be used for zero-shot classification tasks, including zero-shot sentence-pair classification (see the [GitHub repo](https://github.com/facebookresearch/fairseq/tree/main/examples/roberta) for examples) and zero-shot sequence classification.
+
+### Primary intended users:
+Not available.
+
+### Out-of-scope uses:
+The model should not be used to intentionally create hostile or alienating environments for people. In addition, the model was not trained to be factual or true representations of people or events, and therefore using the model to generate such content is out-of-scope for the abilities of this model.
+
+---
+
+## How to Use
+This section outlines how to use the model.
+
+Use the code below to get started with the model. The model can be loaded with the zero-shot-classification pipeline like so:
+
+```python
+from transformers import pipeline
+classifier = pipeline('zero-shot-classification', model='roberta-large-mnli')
+```
+
+You can then use this pipeline to classify sequences into any of the class names you specify. For example:
+
+```python
+sequence_to_classify = "one day I will see the world"
+candidate_labels = ['travel', 'cooking', 'dancing']
+classifier(sequence_to_classify, candidate_labels)
+```
+
+---
+
+## Factors
+This section addresses variables that may impact the model's performance.
+
+### Relevant factors:
+Not available.
+
+### Evaluation factors:
+- **Dataset:** Part of [GLUE (Wang et al., 2019)](https://arxiv.org/pdf/1804.07461.pdf), the General Language Understanding Evaluation benchmark, a collection of 9 datasets for evaluating natural language understanding systems. Specifically, the model was evaluated on the [Multi-Genre Natural Language Inference (MNLI)](https://cims.nyu.edu/~sbowman/multinli/) corpus. See the [GLUE data card](https://huggingface.co/datasets/glue) or [Wang et al. (2019)](https://arxiv.org/pdf/1804.07461.pdf) for further information.
+- **Dataset:** [XNLI (Conneau et al., 2018)](https://arxiv.org/pdf/1809.05053.pdf), the extension of the [Multi-Genre Natural Language Inference (MNLI)](https://cims.nyu.edu/~sbowman/multinli/) corpus to 15 languages: English, French, Spanish, German, Greek, Bulgarian, Russian, Turkish, Arabic, Vietnamese, Thai, Chinese, Hindi, Swahili and Urdu. See the [XNLI data card](https://huggingface.co/datasets/xnli) or [Conneau et al. (2018)](https://arxiv.org/pdf/1809.05053.pdf) for further information.
+
+---
+
+## Metrics
+This section describes how the model's performance is evaluated.
+
+### Model performance measures:
+Accuracy
+
+### Decision thresholds:
+Not available.
+
+### Variation approaches:
+Not available.
+
+---
+
+## Evaluation Data
+This section provides details about the datasets used to evaluate the model.
+
+### Datasets:
+- [Multi-Genre Natural Language Inference (MNLI)](https://cims.nyu.edu/~sbowman/multinli/) corpus. See the [GLUE data card](https://huggingface.co/datasets/glue) or [Wang et al. (2019)](https://arxiv.org/pdf/1804.07461.pdf) for further information.
+- [XNLI (Conneau et al., 2018)](https://arxiv.org/pdf/1809.05053.pdf), the extension of the [Multi-Genre Natural Language Inference (MNLI)](https://cims.nyu.edu/~sbowman/multinli/) corpus to 15 languages: English, French, Spanish, German, Greek, Bulgarian, Russian, Turkish, Arabic, Vietnamese, Thai, Chinese, Hindi, Swahili and Urdu. See the [XNLI data card](https://huggingface.co/datasets/xnli) or [Conneau et al. (2018)](https://arxiv.org/pdf/1809.05053.pdf) for further information.
+
+### Motivation:
+Not available.
+
+### Preprocessing:
+Not available.
+
+---
+
+## Training Data
+This section provides details about the datasets used to train the model.
+
+### Datasets:
+This model was fine-tuned on the [Multi-Genre Natural Language Inference (MNLI)](https://cims.nyu.edu/~sbowman/multinli/) corpus. Also see the [MNLI data card](https://huggingface.co/datasets/multi_nli) for more information.
+
+As described in the [RoBERTa large model card](https://huggingface.co/roberta-large):
+
+> The RoBERTa model was pretrained on the reunion of five datasets:
+>
+> - [BookCorpus](https://yknzhu.wixsite.com/mbweb), a dataset consisting of 11,038 unpublished books;
+> - [English Wikipedia](https://en.wikipedia.org/wiki/English_Wikipedia) (excluding lists, tables and headers) ;
+> - [CC-News](https://commoncrawl.org/2016/10/news-dataset-available/), a dataset containing 63 millions English news articles crawled between September 2016 and February 2019.
+> - [OpenWebText](https://github.com/jcpeterson/openwebtext), an opensource recreation of the WebText dataset used to train GPT-2,
+> - [Stories](https://arxiv.org/abs/1806.02847), a dataset containing a subset of CommonCrawl data filtered to match the story-like style of Winograd schemas.
+>
+> Together theses datasets weight 160GB of text.
+
+Also see the [bookcorpus data card](https://huggingface.co/datasets/bookcorpus) and the [wikipedia data card](https://huggingface.co/datasets/wikipedia) for additional information.
+
+### Motivation:
+Not available.
+
+### Preprocessing:
+As described in the [RoBERTa large model card](https://huggingface.co/roberta-large):
+
+> The texts are tokenized using a byte version of Byte-Pair Encoding (BPE) and a vocabulary size of 50,000. The inputs of
+> the model take pieces of 512 contiguous token that may span over documents. The beginning of a new document is marked
+> with `<s>` and the end of one by `</s>`
+
+---
+
+## Quantitative Analyses
+This section presents disaggregated evaluation results.
+
+### Unitary results:
+GLUE test results (dev set, single model, single-task fine-tuning): 90.2 on MNLI
+
+XNLI test results:
+
+| Task | en |  fr | es  | de  | el  | bg  | ru  | tr  | ar  | vi  | th  | zh  | hi  | sw  | ur  |
+|:----:|:--:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|      |91.3|82.91|84.27|81.24|81.74|83.13|78.28|76.79|76.64|74.17|74.05| 77.5| 70.9|66.65|66.81|
+
+### Intersectional results:
+Not available.
+
+---
+
+## Memory or Hardware Requirements
+This section outlines the memory or hardware requirements for loading, deploying, and training the model.
+
+### Loading Requirements:
+Not available.
+
+### Deploying Requirements:
+Not available.
+
+### Training or Fine-tuning Requirements:
+- **Hardware Type:** 1024 V100 GPUs
+
+---
+
+## Ethical Considerations
+This section discusses the ethical considerations in model development, including challenges, risks, and solutions.
+
+**CONTENT WARNING: Readers should be aware this section contains content that is disturbing, offensive, and can propogate historical and current stereotypes.**
+
+Significant research has explored bias and fairness issues with language models (see, e.g., [Sheng et al. (2021)](https://aclanthology.org/2021.acl-long.330.pdf) and [Bender et al. (2021)](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922)). The [RoBERTa large model card](https://huggingface.co/roberta-large) notes that: "The training data used for this model contains a lot of unfiltered content from the internet, which is far from neutral."
+
+Predictions generated by the model can include disturbing and harmful stereotypes across protected classes; identity characteristics; and sensitive, social, and occupational groups. For example:
+
+```python
+sequence_to_classify = "The CEO had a strong handshake."
+candidate_labels = ['male', 'female']
+hypothesis_template = "This text speaks about a {} profession."
+classifier(sequence_to_classify, candidate_labels, hypothesis_template=hypothesis_template)
+```
+
+Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model.
+
+---
+
+## Caveats and Recommendations
+This section lists unresolved issues and provides guidance for users.
+
+### Caveats:
+Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model.
+
+### Recommendations:
+Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model.
+
+---
+
+## Additional Information
+
+### Model Description:
+roberta-large-mnli is the [RoBERTa large model](https://huggingface.co/roberta-large) fine-tuned on the [Multi-Genre Natural Language Inference (MNLI)](https://huggingface.co/datasets/multi_nli) corpus. The model is a pretrained model on English language text using a masked language modeling (MLM) objective.
+
+### Table of Contents
+- [Model Details](#model-details)
+- [How To Get Started With the Model](#how-to-get-started-with-the-model)
+- [Uses](#uses)
+- [Risks, Limitations and Biases](#risks-limitations-and-biases)
+- [Training](#training)
+- [Evaluation](#evaluation-results)
+- [Environmental Impact](#environmental-impact)
+- [Technical Specifications](#technical-specifications)
+- [Citation Information](#citation-information)
+- [Model Card Authors](#model-card-author)
+
+### Technical Specifications
+See the [associated paper](https://arxiv.org/pdf/1907.11692.pdf) for details on the modeling architecture, objective, compute infrastructure, and training details.
+
+### Environmental Impact
+Carbon emissions can be estimated using the [Machine Learning Impact calculator](https://mlco2.github.io/impact#compute) presented in [Lacoste et al. (2019)](https://arxiv.org/abs/1910.09700). We present the hardware type and hours used based on the [associated paper](https://arxiv.org/pdf/1907.11692.pdf).
+
+- **Hours used:** 24 hours (one day)
+- **Cloud Provider:** Unknown
+- **Compute Region:** Unknown
+- **Carbon Emitted:** Unknown

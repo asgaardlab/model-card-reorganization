@@ -1,0 +1,164 @@
+{
+  "sections": [
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Person or organization developing model",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Model date",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Model version",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Model type",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Model Details: Training details",
+      "irrelevant_information": "The acknowledgement of the GPTQ-Llama project for its advancements in LLM quantization is not a detail about Guanaco's own training process, parameters, or methodologies but rather an acknowledgement of a related project."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Paper or other resource for more information",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Citation details",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: License",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Contact",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Intended Use: Primary intended uses",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Intended Use: Primary intended users",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Intended Use: Out-of-scope uses",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "How to Use",
+      "irrelevant_information": "The reference to 'training details' in the linked resource (Guanaco-lora) is not directly about how to use the pre-trained model for inference, which is the focus of the 'How to Use' section. While inference details are relevant, training details belong more to model development or fine-tuning sections."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Factors: Relevant factors",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Factors: Evaluation factors",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Metrics: Model performance measures",
+      "irrelevant_information": "The content describes a relative performance comparison (trailing behind GPTQ/PEFT in QLoRa) rather than specifying the actual performance metrics (e.g., accuracy, F1 score) used to assess the model's effectiveness and justifying their selection."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Decision thresholds",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Variation approaches",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Evaluation Data: Datasets",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Evaluation Data: Motivation",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Evaluation Data: Preprocessing",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Training Data: Datasets",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Training Data: Motivation",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Training Data: Preprocessing",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Quantitative Analyses: Unitary results",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Quantitative Analyses: Intersectional results",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Memory or Hardware Requirements: Loading Requirements",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Memory or Hardware Requirements: Deploying Requirements",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Memory or Hardware Requirements: Training or Fine-tuning Requirements",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Ethical Considerations",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Caveats and Recommendations: Caveats",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Caveats and Recommendations: Recommendations",
+      "irrelevant_information": "The recommendation to refer to a resource for 'further training' is more relevant to model development or fine-tuning rather than best practices for using the existing model, which is the primary focus of this subsection."
+    }
+  ]
+}

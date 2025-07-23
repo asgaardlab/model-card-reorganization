@@ -1,0 +1,164 @@
+{
+  "sections": [
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Person or organization developing model",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Model date",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Model version",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Model Details: Model type",
+      "irrelevant_information": "The detail 'trained using the Phi-3 datasets' is more relevant to training data or training details rather than the model type itself."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Training details",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Paper or other resource for more information",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Citation details",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: License",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Contact",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Intended Use: Primary intended uses",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Intended Use: Primary intended users",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Intended Use: Out-of-scope uses",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "How to Use",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Factors: Relevant factors",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Factors: Evaluation factors",
+      "irrelevant_information": "The content 'Benchmarks listed in the Benchmarks section' refers to evaluation datasets/tasks, not the specific factors (like demographic variations, environmental conditions) that are analyzed and reported during model evaluation using these benchmarks. It doesn't explicitly state which factors are being evaluated."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Model performance measures",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Decision thresholds",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Variation approaches",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Evaluation Data: Datasets",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Evaluation Data: Motivation",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Evaluation Data: Preprocessing",
+      "irrelevant_information": "'Temperature 0' is an inference parameter/model configuration setting for evaluation, not a preprocessing step applied to the evaluation data itself. 'Few-shot prompts' refers to the prompting strategy or evaluation setup rather than preprocessing of the dataset's content (e.g., cleaning, normalization, tokenization of the dataset instances before being used in prompts)."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Training Data: Datasets",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Training Data: Motivation",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Training Data: Preprocessing",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Quantitative Analyses: Unitary results",
+      "irrelevant_information": "The content 'Benchmark tables in the Benchmarks section' is a reference to where results might be found, but it does not 'present performance results for each individual factors identified in the Factors section' within this subsection itself. It doesn't confirm if these tables actually disaggregate results by the previously identified factors."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Quantitative Analyses: Intersectional results",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Memory or Hardware Requirements: Loading Requirements",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Memory or Hardware Requirements: Deploying Requirements",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Memory or Hardware Requirements: Training or Fine-tuning Requirements",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Ethical Considerations",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Caveats and Recommendations: Caveats",
+      "irrelevant_information": "The statement 'Overall, the model with only 3.8B-param achieves a similar level of language understanding and reasoning ability as much larger models.' is a positive performance comparison, not a caveat or limitation."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Caveats and Recommendations: Recommendations",
+      "irrelevant_information": "None"
+    }
+  ]
+}

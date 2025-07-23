@@ -1,0 +1,294 @@
+## Reorganized Model Card:
+
+## Model Details
+This section provides fundamental information about the model, helping stakeholders understand its context and key characteristics.
+
+### Person or organization developing model:
+OpenBMB. Please refer to the provided GitHub link [GitHub](https://github.com/OpenBMB/MiniCPM-V) for more information.
+
+### Model date:
+* [2024.08.10] MiniCPM-Llama3-V 2.5 is now fully supported by official llama.cpp.
+* [2024.08.06] MiniCPM-V 2.6 is open-sourced.
+* [2024.08.03] MiniCPM-Llama3-V 2.5 technical report is released.
+* [2024.07.19] MiniCPM-Llama3-V 2.5 supports vLLM.
+* [2024.05.28] MiniCPM-Llama3-V 2.5 now fully supports its feature in llama.cpp and ollama.
+* [2024.05.28] LoRA fine-tuning for MiniCPM-Llama3-V 2.5 is supported.
+* [2024.05.23] MiniCPM-V tops GitHub Trending and HuggingFace Trending.
+* [2024.06.03] MiniCPM-Llama3-V 2.5 can run on multiple low VRAM GPUs.
+* [2024.05.25] MiniCPM-Llama3-V 2.5 now supports streaming outputs and customized system prompts.
+* [2024.05.24] MiniCPM-Llama3-V 2.5 gguf is released.
+* [2024.05.23] Comparison between Phi-3-vision-128k-instruct and MiniCPM-Llama3-V 2.5 is released.
+* [2024.05.20] MiniCPM-Llama3-V 2.5 is open-sourced.
+
+### Model version:
+MiniCPM-Llama3-V 2.5 is the latest model in the MiniCPM-V series and a significant performance improvement over MiniCPM-V 2.0. MiniCPM-V 2.6 is also mentioned as a newer version outperforming GPT-4V on several benchmarks.
+
+### Model type:
+Multimodal Large Language Model (MLLM). It is built on SigLip-400M and Llama3-8B-Instruct with a total of 8B parameters. It is designed for image understanding, OCR, and supports over 30 languages.
+
+### Training details:
+Leveraging the latest [RLAIF-V](https://github.com/RLHF-V/RLAIF-V/) method. LoRA fine-tuning is supported and can be done with 2 V100 GPUs.
+
+### Paper or other resource for more information:
+* GitHub repository: [GitHub](https://github.com/OpenBMB/MiniCPM-V)
+* Demo: [Demo](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5)
+* Technical report: [here](https://github.com/OpenBMB/MiniCPM-V/tree/main/docs/MiniCPM_Llama3_V_25_technical_report.pdf)
+* VisCPM: [VisCPM](https://github.com/OpenBMB/VisCPM/tree/main)
+* RLHF-V: [RLHF-V](https://github.com/RLHF-V/RLHF-V)
+* LLaVA-UHD: [LLaVA-UHD](https://github.com/thunlp/LLaVA-UHD)
+* RLAIF-V: [RLAIF-V](https://github.com/RLHF-V/RLAIF-V)
+
+### Citation details:
+```bib
+@article{yao2024minicpmv,
+      title={MiniCPM-V: A GPT-4V Level MLLM on Your Phone},
+      author={Yao, Yuan and Yu, Tianyu and Zhang, Ao and Wang, Chongyi and Cui, Junbo and Zhu, Hongji and Cai, Tianchi and Li, Haoyu and Zhao, Weilin and He, Zhihui and Chen, Qianyu and Zhou, Huarong and Zou, Zhensheng and Zhang, Haoye and Hu, Shengding and Zheng, Zhi and Zhou, Jie and Cai, Jie and Han, Xu and Zeng, Guoyang and Li, Dahai and Liu, Zhiyuan and Sun, Maosong},
+      journal={arXiv preprint 2408.01800},
+      year={2024},
+}
+```
+
+### License:
+* Code is released under the [Apache-2.0](https://github.com/OpenBMB/MiniCPM/blob/main/LICENSE) License.
+* Model weights usage must follow [MiniCPM Model License.md](https://github.com/OpenBMB/MiniCPM/blob/main/MiniCPM%20Model%20License.md).
+* Models and weights are free for academic research. For commercial use, registration via ["questionnaire"](https://modelbest.feishu.cn/share/base/form/shrcnpV5ZT9EJ6xYjh3Kx0J6v8g) is required.
+
+### Contact:
+[WeChat](https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/wechat.md)
+
+---
+
+## Intended Use
+This section outlines the intended applications of the model.
+
+### Primary intended uses:
+MiniCPM-Llama3-V 2.5 is intended to be a high-performance, efficient multimodal LLM, comparable to GPT-4V, that can be deployed on mobile phones and edge devices. It is designed for tasks such as image understanding, OCR (achieving 700+ score on OCRBench), and supporting interactions in over 30 languages. It can process images with any aspect ratio and up to 1.8 million pixels. It is designed for efficient inference and simple fine-tuning.
+
+### Primary intended users:
+Researchers, developers, and end-users interested in deploying and utilizing a powerful multimodal LLM on mobile and edge devices.
+
+### Out-of-scope uses:
+Not available.
+
+---
+
+## How to Use
+This section outlines how to use the model.
+
+Inference using Huggingface transformers on NVIDIA GPUs. Requirements tested on python 3.10:
+```
+Pillow==10.1.0
+torch==2.1.2
+torchvision==0.16.2
+transformers==4.40.0
+sentencepiece==0.1.99
+```
+
+```python
+# test.py
+import torch
+from PIL import Image
+from transformers import AutoModel, AutoTokenizer
+
+model = AutoModel.from_pretrained('openbmb/MiniCPM-Llama3-V-2_5', trust_remote_code=True, torch_dtype=torch.float16)
+model = model.to(device='cuda')
+
+tokenizer = AutoTokenizer.from_pretrained('openbmb/MiniCPM-Llama3-V-2_5', trust_remote_code=True)
+model.eval()
+
+image = Image.open('xx.jpg').convert('RGB')
+question = 'What is in the image?'
+msgs = [{'role': 'user', 'content': question}]
+
+res = model.chat(
+    image=image,
+    msgs=msgs,
+    tokenizer=tokenizer,
+    sampling=True, # if sampling=False, beam_search will be used by default
+    temperature=0.7,
+    # system_prompt='' # pass system_prompt if needed
+)
+print(res)
+
+## if you want to use streaming, please make sure sampling=True and stream=True
+## the model.chat will return a generator
+res = model.chat(
+    image=image,
+    msgs=msgs,
+    tokenizer=tokenizer,
+    sampling=True,
+    temperature=0.7,
+    stream=True
+)
+
+generated_text = ""
+for new_text in res:
+    generated_text += new_text
+    print(new_text, flush=True, end='')
+```
+
+For more details about usage, please refer to [GitHub](https://github.com/OpenBMB/MiniCPM-V).
+For llama.cpp inference, see our fork of [llama.cpp](https://github.com/OpenBMB/llama.cpp/tree/minicpm-v2.5/examples/minicpmv).
+Try out the Demo of [MiniCPM-Llama3-V 2.5](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5).
+
+---
+
+## Factors
+This section addresses variables that may impact the model's performance.
+
+### Relevant factors:
+Not available.
+
+### Evaluation factors:
+Not available.
+
+---
+
+## Metrics
+This section describes how the model's performance is evaluated.
+
+### Model performance measures:
+The model's performance is evaluated using metrics from benchmarks like OpenCompass (average score of 65.1), OCRBench (700+ score), and Object HalBench (10.3% hallucination rate). It is also evaluated on TextVQA, DocVQA, MME, MMBench, MMMU, MathVista, LLaVA Bench, and RealWorld QA.
+
+### Decision thresholds:
+Not available.
+
+### Variation approaches:
+Not available.
+
+---
+
+## Evaluation Data
+This section provides details about the datasets used to evaluate the model.
+
+### Datasets:
+TextVQA, DocVQA, OCRBench, OpenCompass MultiModal, MME, MMBench, MMMU, MathVista, LLaVA Bench, RealWorld QA, Object HalBench, and multilingual LLaVA Bench. [Data released](https://huggingface.co/datasets/openbmb/RLAIF-V-Dataset) for RLAIF-V.
+
+### Motivation:
+These datasets are used to comprehensively evaluate the model's multimodal capabilities, OCR performance, general visual understanding, and trustworthiness (hallucination rate). They cover a range of tasks to assess the model's performance in various real-world scenarios.
+
+### Preprocessing:
+Not available.
+
+---
+
+## Training Data
+This section provides details about the datasets used to train the model.
+
+### Datasets:
+Trained on datasets used to train SigLip-400M and Llama3-8B-Instruct.
+
+### Motivation:
+These datasets were chosen as they are proven to be effective for pre-training vision and language models, providing a strong foundation for building a high-performance multimodal LLM.
+
+### Preprocessing:
+Not available.
+
+---
+
+## Quantitative Analyses
+This section presents disaggregated evaluation results.
+
+### Unitary results:
+Evaluation results on TextVQA, DocVQA, OCRBench, OpenCompass MultiModal Avg , MME, MMBench, MMMU, MathVista, LLaVA Bench, RealWorld QA, Object HalBench are presented in the images provided in the original model card. Evaluation results of multilingual LLaVA Bench are also presented in an image.
+
+### Intersectional results:
+Not available.
+
+---
+
+## Memory or Hardware Requirements
+This section outlines the memory or hardware requirements for loading, deploying, and training the model.
+
+### Loading Requirements:
+Int4 quantized version available for lower GPU memory (8GB) usage. Can run on multiple low VRAM GPUs (12 GB or 16 GB) by distributing the model's layers across multiple GPUs. GGUF format quantized models in 16 sizes are available.
+
+### Deploying Requirements:
+Designed for efficient deployment on edge devices and mobile phones with Qualcomm chips. Achieves 150-fold acceleration in multimodal large model end-side image encoding and a 3-fold increase in language decoding speed on mobile phones with Qualcomm chips.
+
+### Training or Fine-tuning Requirements:
+LoRA fine-tuning requires only 2 V100 GPUs.
+
+---
+
+## Ethical Considerations
+This section discusses the ethical considerations in model development, including challenges, risks, and solutions.
+
+As an LLM, MiniCPM-Llama3-V 2.5 generates contents by learning a large amount of texts, but it cannot comprehend, express personal opinions or make value judgement. Anything generated by MiniCPM-Llama3-V 2.5 does not represent the views and positions of the model developers. The model exhibits trustworthy behavior with a 10.3% hallucination rate on Object HalBench, lower than GPT-4V-1106 (13.6%). We will not be liable for any problems arising from the use of the MinCPM-V open Source model, including but not limited to data security issues, risk of public opinion, or any risks and problems arising from the misdirection, misuse, dissemination or misuse of the model.
+
+---
+
+## Caveats and Recommendations
+This section lists unresolved issues and provides guidance for users.
+
+### Caveats:
+MiniCPM-Llama3-V 2.5 series is **not supported by the official repositories yet**. Deployment on Mobile Phone is "Coming soon."
+
+### Recommendations:
+Please look at [GitHub](https://github.com/OpenBMB/MiniCPM-V) for more detail about usage. For streaming output, ensure `sampling=True` and `stream=True`.
+
+---
+
+## Additional Information
+
+#### 📌 Pinned News
+* [2024.08.10] 🚀🚀🚀 MiniCPM-Llama3-V 2.5 is now fully supported by [official](https://github.com/ggerganov/llama.cpp) llama.cpp! GGUF models of various sizes are available [here](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-gguf).
+* [2024.08.06] 🔥🔥🔥 We open-source [MiniCPM-V 2.6](https://huggingface.co/openbmb/MiniCPM-V-2_6), which outperforms GPT-4V on single image, multi-image and video understanding. It advances popular features of MiniCPM-Llama3-V 2.5, and can support real-time video understanding on iPad. Try it now!
+* [2024.08.03] MiniCPM-Llama3-V 2.5 technical report is released! See [here](https://github.com/OpenBMB/MiniCPM-V/tree/main/docs/MiniCPM_Llama3_V_25_technical_report.pdf).
+* [2024.07.19] MiniCPM-Llama3-V 2.5 supports vLLM now! See [here](https://github.com/OpenBMB/MiniCPM-V/tree/main?tab=readme-ov-file#vllm).
+* [2024.05.28] 🚀🚀🚀 MiniCPM-Llama3-V 2.5 now fully supports its feature in llama.cpp and ollama! Please pull the latest code **of our provided forks** ([llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpm-v2.5/examples/minicpmv/README.md), [ollama](https://github.com/OpenBMB/ollama/tree/minicpm-v2.5/examples/minicpm-v2.5)). GGUF models in various sizes are available [here](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-gguf/tree/main). MiniCPM-Llama3-V 2.5 series is **not supported by the official repositories yet**, and we are working hard to merge PRs. Please stay tuned! You can visit our [GitHub](https://github.com/OpenBMB/MiniCPM-V) repository for more information!
+* [2024.05.28] 💫 We now support LoRA fine-tuning for MiniCPM-Llama3-V 2.5, using only 2 V100 GPUs! See more statistics [here](https://github.com/OpenBMB/MiniCPM-V/tree/main/finetune#model-fine-tuning-memory-usage-statistics).
+* [2024.05.23] 🔥🔥🔥 MiniCPM-V tops GitHub Trending and HuggingFace Trending! Our demo, recommended by Hugging Face Gradio’s official account, is available [here](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5). Come and try it out!
+
+<br>
+
+* [2024.06.03] Now, you can run MiniCPM-Llama3-V 2.5 on multiple low VRAM GPUs(12 GB or 16 GB) by distributing the model's layers across multiple GPUs. For more details, Check this [link](https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/inference_on_multiple_gpus.md).
+* [2024.05.25] MiniCPM-Llama3-V 2.5 now supports streaming outputs and customized system prompts. Try it at [here](#usage)
+* [2024.05.24]  We release the [MiniCPM-Llama3-V 2.5 gguf](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-gguf), which supports [llama.cpp](https://github.com/OpenBMB/MiniCPM-V/tree/main?tab=readme-ov-file#inference-with-llamacpp) inference and provides a 6~8 token/s smooth decoding on mobile phones. Try it now!
+* [2024.05.23] 🔍 We've released a comprehensive comparison between Phi-3-vision-128k-instruct and MiniCPM-Llama3-V 2.5, including benchmarks evaluations, multilingual capabilities, and inference efficiency 🌟📊🌍🚀. Click [here](https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/compare_with_phi-3_vision.md) to view more details.
+* [2024.05.20] We open-soure MiniCPM-Llama3-V 2.5, it has improved OCR capability and supports 30+ languages, representing the first end-side MLLM achieving GPT-4V level performance! We provide [efficient inference](#deployment-on-mobile-phone) and [simple fine-tuning](https://github.com/OpenBMB/MiniCPM-V/blob/main/finetune/readme.md). Try it now!
+
+Results on TextVQA, DocVQA, OCRBench, OpenCompass MultiModal Avg , MME, MMBench, MMMU, MathVista, LLaVA Bench, RealWorld QA, Object HalBench.
+
+<div align="center">
+    <img src="https://cdn-uploads.huggingface.co/production/uploads/64abc4aa6cadc7aca585dddf/v2KE3wqQgM05ZW3dH2wbx.png" width="110%" />
+</div>
+
+
+Evaluation results of multilingual LLaVA Bench
+<div align="center">
+    <img src="assets/minicpmv-llama3-v2.5/llavabench_compare.png" width="110%" />
+</div>
+
+
+Examples
+
+<table align="center">
+    <p align="center">
+      <img src="assets/minicpmv-llama3-v2.5/cases_all.png" width=95%/>
+    </p>
+</table>
+
+We deploy MiniCPM-Llama3-V 2.5 on end devices. The demo video is the raw screen recording on a Xiaomi 14 Pro without edition.
+
+<table align="center">
+    <p align="center">
+      <img src="assets/gif_cases/ticket.gif" width=40% style="display:inline-block;"/>
+      <img src="assets/gif_cases/meal_plan.gif" width=40% style="display:inline-block;"/>
+    </p>
+</table>
+
+<table align="center">
+    <p align="center">
+      <img src="assets/gif_cases/1-4.gif" width=80%/>
+    </p>
+</table>
+
+MiniCPM-V 2.0
+Please see the info about MiniCPM-V 2.0 [here](https://huggingface.co/openbmb/MiniCPM-V-2).
+
+Key Techniques and Other Multimodal Projects
+
+👏 Welcome to explore key techniques of MiniCPM-V 2.6 and other multimodal projects of our team:
+
+[VisCPM](https://github.com/OpenBMB/VisCPM/tree/main) | [RLHF-V](https://github.com/RLHF-V/RLHF-V) | [LLaVA-UHD](https://github.com/thunlp/LLaVA-UHD)  | [RLAIF-V](https://github.com/RLHF-V/RLAIF-V)

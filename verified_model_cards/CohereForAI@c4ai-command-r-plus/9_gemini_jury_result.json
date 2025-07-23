@@ -1,0 +1,164 @@
+{
+  "sections": [
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Person or organization developing model",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Model date",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Model version",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Model Details: Model type",
+      "irrelevant_information": "The sentence 'After pretraining, this model uses supervised fine-tuning (SFT) and preference training to align model behavior to human preferences for helpfulness and safety.' describes training procedures, which are more relevant to the 'Training details' section rather than 'Model type'."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Training details",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Paper or other resource for more information",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Citation details",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: License",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Model Details: Contact",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Intended Use: Primary intended uses",
+      "irrelevant_information": "The sentence 'C4AI Command R+ is part of a family of open weight releases from Cohere For AI and Cohere. Our smaller companion model is [C4AI Command R](https://huggingface.co/CohereForAI/c4ai-command-r-v01)' provides context about the model family rather than describing its primary intended uses."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Intended Use: Primary intended users",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Intended Use: Out-of-scope uses",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "How to Use",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Factors: Relevant factors",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Factors: Evaluation factors",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Model performance measures",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Decision thresholds",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Metrics: Variation approaches",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Evaluation Data: Datasets",
+      "irrelevant_information": "The content describes where the model was submitted for evaluation (Open LLM leaderboard) and a note on standardized evaluation, rather than providing specific information about the evaluation datasets themselves (e.g., names, size, diversity, source) as requested by the description."
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Evaluation Data: Motivation",
+      "irrelevant_information": "The content explains the motivation for using a standardized evaluation methodology (for comparability) rather than explaining why specific evaluation datasets were chosen or their relevance to the model's intended use and real-world scenarios."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Evaluation Data: Preprocessing",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Training Data: Datasets",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Training Data: Motivation",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Training Data: Preprocessing",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Quantitative Analyses: Unitary results",
+      "irrelevant_information": "The content provides aggregate benchmark scores, which were already presented in 'Model performance measures'. This section is intended for performance results disaggregated by individual factors (e.g., demographic groups, environmental conditions), but no such factors were identified in the 'Factors' section, and the provided table does not show such disaggregated results."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Quantitative Analyses: Intersectional results",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Memory or Hardware Requirements: Loading Requirements",
+      "irrelevant_information": "The content provides a link to a quantized version of the model, which relates to loading requirements by potentially reducing them, but it does not specify the actual memory or hardware requirements (e.g., RAM/VRAM size, disk space) needed to load the model as per the description."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Memory or Hardware Requirements: Deploying Requirements",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Memory or Hardware Requirements: Training or Fine-tuning Requirements",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": false,
+      "section_name": "Ethical Considerations",
+      "irrelevant_information": "The content 'Don't answer questions that are harmful or immoral.' is a model behavior guideline or safety instruction, not a comprehensive discussion of ethical considerations in model development, potential risks, data usage, mitigation strategies, or affected groups as outlined in the section description."
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Caveats and Recommendations: Caveats",
+      "irrelevant_information": "None"
+    },
+    {
+      "is_relevant": true,
+      "section_name": "Caveats and Recommendations: Recommendations",
+      "irrelevant_information": "None"
+    }
+  ]
+}

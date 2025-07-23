@@ -1,0 +1,308 @@
+## Model Details
+This section provides fundamental information about the model, helping stakeholders understand its context and key characteristics.
+
+### Person or organization developing model:
+OpenChat is developed by a team where Guan Wang and Alpay Ariyak are project leads, and the GitHub repository is linked to `imoneoi/openchat`.
+
+### Model date:
+The paper cited is dated September 2023.
+
+### Model version:
+OpenChat 3.5.
+
+### Model type:
+OpenChat 3.5 is a 7B parameter language model. It is fine-tuned with C-RLFT, a strategy inspired by offline reinforcement learning. It has a context length of 8192. It is based on a Transformer architecture. It is designed for text generation and chat completions, comparable to ChatGPT.
+
+### Training details:
+OpenChat 3.5 was trained with C-RLFT (strategy inspired by offline reinforcement learning) on mixed-quality data without preference labels. It was trained on a collection of publicly available high-quality instruction data, with a custom processing pipeline.
+
+### Paper or other resource for more information:
+- **GitHub Repo:** [https://github.com/imoneoi/openchat](https://github.com/imoneoi/openchat) - Repository containing code, installation guide, Web UI, and benchmarks reproduction instructions.
+- **Online Demo:** [https://openchat.team](https://openchat.team) - Online demo to interact with the model.
+- **Discord:** [https://discord.gg/pQjnXvNKHY](https://discord.gg/pQjnXvNKHY) - Discord server for community discussions and support.
+- **Twitter:** [https://twitter.com/imonenext](https://twitter.com/imonenext) - Twitter account, likely for updates and announcements.
+- **Huggingface:** [https://huggingface.co/openchat](https://huggingface.co/openchat) - Huggingface page for model weights and related resources.
+- **Paper:** [https://arxiv.org/pdf/2309.11235.pdf](https://arxiv.org/pdf/2309.11235.pdf) - Research paper detailing C-RLFT and OpenChat.
+- **Installation guide:** [https://github.com/imoneoi/openchat#installation](https://github.com/imoneoi/openchat#installation) - Guide for installing the OpenChat package.
+- **OpenChat Web UI:** [https://github.com/imoneoi/openchat#web-ui](https://github.com/imoneoi/openchat#web-ui) - Information about the Web UI.
+- **vLLM:** [https://github.com/vllm-project/vllm](https://github.com/vllm-project/vllm) - vLLM library used for optimized serving.
+- **OpenAI ChatCompletion API specifications:** [https://platform.openai.com/docs/api-reference/chat](https://platform.openai.com/docs/api-reference/chat) - Documentation for OpenAI ChatCompletion API compatibility.
+- **HTTPS gateway:** [https://fastapi.tiangolo.com/es/deployment/concepts/#security-https](https://fastapi.tiangolo.com/es/deployment/concepts/#security-https) - Link to HTTPS gateway recommendation for security.
+
+### Citation details:
+```
+@article{wang2023openchat,
+  title={OpenChat: Advancing Open-source Language Models with Mixed-Quality Data},
+  author={Wang, Guan and Cheng, Sijie and Zhan, Xianyuan and Li, Xiangang and Song, Sen and Liu, Yang},
+  journal={arXiv preprint arXiv:2309.11235},
+  year={2023}
+}
+```
+[![DOI](https://zenodo.org/badge/645397533.svg)](https://zenodo.org/badge/latestdoi/645397533)
+
+### License:
+OpenChat 3.5 code and models are distributed under the Apache License 2.0.
+
+### Contact:
+**Project Lead:**
+- Guan Wang [imonenext at gmail dot com]
+- [Alpay Ariyak](https://github.com/alpayariyak) [aariyak at wpi dot edu]
+
+---
+
+## Intended Use
+This section outlines the intended applications of the model.
+
+### Primary intended uses:
+OpenChat is intended for use as a high-performance, commercially viable, open-source large language model. It is designed to deliver exceptional performance on par with ChatGPT, even with a 7B model. It can be used for general conversational purposes, as well as coding tasks, as demonstrated by the "Coding Mode" example. The input is text-based user prompts, and the output is text-based model responses in a chat format.
+
+### Primary intended users:
+The primary intended users are researchers, developers, and businesses interested in utilizing and deploying open-source large language models. The model is designed to be deployable on consumer GPUs with 24GB RAM, allowing accessibility for a wide range of users.
+
+### Out-of-scope uses:
+**Foundation Model Limitations**
+Despite its advanced capabilities, OpenChat is still bound by the limitations inherent in its foundation models. These limitations may impact the model's performance in areas such as:
+
+ - Complex reasoning
+ - Mathematical and arithmetic tasks
+ - Programming and coding challenges
+
+**Hallucination of Non-existent Information**
+OpenChat may sometimes generate information that does not exist or is not accurate, also known as "hallucination". Users should be aware of this possibility and verify any critical information obtained from the model.
+
+**Safety**
+OpenChat may sometimes generate harmful, hate speech, biased responses, or answer unsafe questions. It's crucial to apply additional AI safety measures in use cases that require safe and moderated responses.
+
+---
+
+## How to Use
+This section outlines how to use the model.
+
+To use this model, install the OpenChat package following the [installation guide](https://github.com/imoneoi/openchat#installation).  It is recommended to use the OpenChat OpenAI-compatible API server by running the serving command. The server is optimized for high-throughput deployment using [vLLM](https://github.com/vllm-project/vllm) and can run on a consumer GPU with 24GB RAM. Tensor parallelism can be enabled with `--tensor-parallel-size N`.
+
+The server listens at `localhost:18888` and is compatible with the [OpenAI ChatCompletion API specifications](https://platform.openai.com/docs/api-reference/chat).
+
+**Example request:**
+```bash
+curl http://localhost:18888/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openchat_3.5",
+    "messages": [{"role": "user", "content": "You are a large language model named OpenChat. Write a poem to describe yourself"}]
+  }'
+```
+
+**Coding Mode Example:**
+```bash
+curl http://localhost:18888/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "openchat_3.5",
+    "condition": "Code",
+    "messages": [{"role": "user", "content": "Write an aesthetic TODO app using HTML5 and JS, in a single file. You should use round corners and gradients to make it more aesthetic."}]
+  }'
+```
+
+**Serving Command Example:**
+`python -m ochat.serving.openai_api_server --model openchat/openchat_3.5 --engine-use-ray --worker-use-ray`
+
+**Table of Model Details and Serving Command:**
+
+| Model        | Size | Context | Weights                                                     | Serving                                                                                                     |
+|--------------|------|---------|-------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| OpenChat 3.5 | 7B   | 8192    | [Huggingface](https://huggingface.co/openchat/openchat_3.5) | `python -m ochat.serving.openai_api_server --model openchat/openchat_3.5 --engine-use-ray --worker-use-ray` |
+
+**Conversation Templates for Huggingface Transformers (not recommended for performance):**
+
+```python
+import transformers
+tokenizer = transformers.AutoTokenizer.from_pretrained("openchat/openchat_3.5")
+
+# Single-turn
+tokens = tokenizer("GPT4 Correct User: Hello<|end_of_turn|>GPT4 Correct Assistant:").input_ids
+assert tokens == [1, 420, 6316, 28781, 3198, 3123, 1247, 28747, 22557, 32000, 420, 6316, 28781, 3198, 3123, 21631, 28747]
+
+# Multi-turn
+tokens = tokenizer("GPT4 Correct User: Hello<|end_of_turn|>GPT4 Correct Assistant: Hi<|end_of_turn|>GPT4 Correct User: How are you today?<|end_of_turn|>GPT4 Correct Assistant:").input_ids
+assert tokens == [1, 420, 6316, 28781, 3198, 3123, 1247, 28747, 22557, 32000, 420, 6316, 28781, 3198, 3123, 21631, 28747, 15359, 32000, 420, 6316, 28781, 3198, 3123, 1247, 28747, 1602, 460, 368, 3154, 28804, 32000, 420, 6316, 28781, 3198, 3123, 21631, 28747]
+
+# Coding Mode
+tokens = tokenizer("Code User: Implement quicksort using C++<|end_of_turn|>Code Assistant:").input_ids
+assert tokens == [1, 7596, 1247, 28747, 26256, 2936, 7653, 1413, 334, 1680, 32000, 7596, 21631, 28747]
+```
+
+**Using `tokenizer.chat_template`:**
+
+```python
+messages = [
+    {"role": "user", "content": "Hello"},
+    {"role": "assistant", "content": "Hi"},
+    {"role": "user", "content": "How are you today?"}
+]
+tokens = tokenizer.apply_chat_template(messages, add_generation_prompt=True)
+assert tokens == [1, 420, 6316, 28781, 3198, 3123, 1247, 28747, 22557, 32000, 420, 6316, 28781, 3198, 3123, 21631, 28747, 15359, 32000, 420, 6316, 28781, 3198, 3123, 1247, 28747, 1602, 460, 368, 3154, 28804, 32000, 420, 6316, 28781, 3198, 3123, 21631, 28747]
+```
+
+---
+
+## Factors
+This section addresses variables that may impact the model's performance.
+
+### Relevant factors:
+Data quality is a key factor in the model's development approach ("Mixed-Quality Data").  The foundation model's inherent limitations impact performance in "Complex reasoning", "Mathematical and arithmetic tasks", and "Programming and coding challenges".
+
+### Evaluation factors:
+The evaluation factors are the benchmarks used to assess the model's performance. These include: MT-Bench, AGIEval, BBH MC, TruthfulQA, MMLU, HumanEval, BBH CoT, and GSM8K.
+
+---
+
+## Metrics
+This section describes how the model's performance is evaluated.
+
+### Model performance measures:
+The model performance measures used are: Average score across benchmarks, MT-Bench score, AGIEval score, BBH MC score, TruthfulQA score, MMLU score, HumanEval score, BBH CoT score, and GSM8K score. These metrics are used to compare OpenChat 3.5 against other models like ChatGPT, Grok, OpenHermes, OpenOrca Mistral, Zephyr-β, and Mistral. The "Comparison with [X.AI Grok models](https://x.ai/)" uses "Average", "MMLU", "HumanEval", "MATH", and "GSM8k" scores for comparison.
+
+### Decision thresholds:
+Not available.
+
+### Variation approaches:
+All models are evaluated in chat mode (e.g. with the respective conversation template applied). All zero-shot benchmarks follow the same setting as in the AGIEval paper and Orca paper. CoT tasks use the same configuration as Chain-of-Thought Hub, HumanEval is evaluated with EvalPlus, and MT-bench is run using FastChat. These are the approaches to ensure consistent and comparable evaluation.
+
+---
+
+## Evaluation Data
+This section provides details about the datasets used to evaluate the model.
+
+### Datasets:
+The evaluation datasets are: MT-Bench, AGIEval, BBH MC, TruthfulQA, MMLU, HumanEval, BBH CoT, and GSM8K.
+
+### Motivation:
+Not available.
+
+### Preprocessing:
+As all models are evaluated in chat mode (e.g. with the respective conversation template applied), the evaluation data is formatted according to the chat templates used by each model.
+
+---
+
+## Training Data
+This section provides details about the datasets used to train the model.
+
+### Datasets:
+OpenChat 3.5 was trained on a collection of publicly available high-quality instruction data. Notable subsets include:
+- [OpenChat ShareGPT](https://huggingface.co/datasets/openchat/openchat_sharegpt4_dataset)
+- [Open-Orca with FLAN answers](https://huggingface.co/datasets/imone/OpenOrca_FLAN)
+- Capybara [1](https://huggingface.co/datasets/LDJnr/Pure-Dove) [2](https://huggingface.co/datasets/LDJnr/Verified-Camel) [3](https://huggingface.co/datasets/LDJnr/LessWrong-Amplify-Instruct)
+- [GOAT](https://huggingface.co/datasets/tiedong/goat)
+- [Glaive](https://huggingface.co/datasets/glaiveai/glaive-code-assistant)
+- [MetaMathQA](https://huggingface.co/datasets/meta-math/MetaMathQA)
+- [MathInstruct](https://huggingface.co/datasets/TIGER-Lab/MathInstruct)
+- [OpenAssistant](https://huggingface.co/datasets/OpenAssistant/oasst_top1_2023-08-25)
+
+### Motivation:
+These datasets were chosen as they are publicly available, high-quality instruction datasets suitable for training instruction-following language models.
+
+### Preprocessing:
+OpenChat 3.5 was trained with a custom processing pipeline applied to the training data. 
+
+---
+
+## Quantitative Analyses
+This section presents disaggregated evaluation results.
+
+### Unitary results:
+The following tables provide unitary results by showing performance metrics (Average, MT-Bench, AGIEval, BBH MC, TruthfulQA, MMLU, HumanEval, BBH CoT, GSM8K, MATH) for OpenChat 3.5 and comparing them to other models. Each row in the tables represents a unitary result for a specific model across different benchmarks.
+
+#### Comparison with [X.AI Grok models](https://x.ai/)
+| Model              | # Params | Average  | MT-Bench     | AGIEval  | BBH MC   | TruthfulQA    | MMLU         | HumanEval       | BBH CoT     | GSM8K        |
+|--------------------|----------|----------|--------------|----------|----------|---------------|--------------|-----------------|-------------|--------------|
+| OpenChat-3.5       | **7B**   | **61.6** | 7.81         | **47.4** | **47.6** | **59.1**      | 64.3         | **55.5**        | 63.5        | **77.3**     |
+| ChatGPT (March)*   | ?        | 61.5     | **7.94**     | 47.1     | **47.6** | 57.7          | **67.3**     | 48.1            | **70.1**    | 74.9         |
+|                    |          |          |              |          |          |               |              |                 |             |              |
+| OpenHermes 2.5     | 7B       | 59.3     | 7.54         | 46.5     | 49.4     | 57.5          | 63.8         | 48.2            | 59.9        | 73.5         |
+| OpenOrca Mistral   | 7B       | 52.7     | 6.86         | 42.9     | 49.4     | 45.9          | 59.3         | 38.4            | 58.1        | 59.1         |
+| Zephyr-β^          | 7B       | 34.6     | 7.34         | 39.0     | 40.6     | 40.8          | 39.8         | 22.0            | 16.0        | 5.1          |
+| Mistral            | 7B       | -        | 6.84         | 38.0     | 39.0     | -             | 60.1         | 30.5            | -           | 52.2         |
+| Open-source SOTA** | 13B-70B  | 61.4     | 7.71         | 41.7     | 49.7     | 62.3          | 63.7         | 73.2            | 41.4        | 82.3         |
+|                    |          |          | WizardLM 70B | Orca 13B | Orca 13B | Platypus2 70B | WizardLM 70B | WizardCoder 34B | Flan-T5 11B | MetaMath 70B |
+
+#### <a id="benchmarks"></a> Benchmarks
+|              | License     | # Param | Average  | MMLU | HumanEval | MATH     | GSM8k    |
+|--------------|-------------|---------|----------|------|-----------|----------|----------|
+| OpenChat 3.5 | Apache-2.0  | 7B      | **56.4** | 64.3 | 55.5      | **28.6** | **77.3** |
+| Grok-0       | Proprietary | 33B     | 44.5     | 65.7 | 39.7      | 15.7     | 56.8     |
+| Grok-1       | Proprietary | ?       | 55.8     | 73   | 63.2      | 23.9     | 62.9     |
+
+### Intersectional results:
+Not available.
+
+---
+
+## Memory or Hardware Requirements
+This section outlines the memory or hardware requirements for loading, deploying, and training the model.
+
+### Loading Requirements:
+Not available.
+
+### Deploying Requirements:
+The server is optimized for high-throughput deployment using [vLLM](https://github.com/vllm-project/vllm) and can run on a consumer GPU with 24GB RAM.
+
+### Training or Fine-tuning Requirements:
+Not available.
+
+---
+
+## Ethical Considerations
+This section discusses the ethical considerations in model development, including challenges, risks, and solutions.
+
+OpenChat may generate harmful, hate speech, biased responses, or answer unsafe questions. This is a potential risk associated with the model's application. It's crucial to apply additional AI safety measures in use cases that require safe and moderated responses.  OpenChat may sometimes generate information that does not exist or is not accurate, also known as "hallucination", requiring users to verify critical information.
+
+---
+
+## Caveats and Recommendations
+This section lists unresolved issues and provides guidance for users.
+
+### Caveats:
+- **Foundation Model Limitations:** OpenChat is limited by its foundation model in "Complex reasoning", "Mathematical and arithmetic tasks", and "Programming and coding challenges".
+- **Hallucination:** The model may generate inaccurate or non-existent information.
+- **Safety:** The model may generate harmful, biased, or unsafe content.
+
+### Recommendations:
+- **Verify critical information:** Users should verify any critical information obtained from the model due to the risk of hallucination.
+- **Apply AI safety measures:** In use cases requiring safe and moderated responses, it's crucial to apply additional AI safety measures to mitigate the risk of harmful or unsafe outputs.
+- **Use HTTPS gateway for online services:** For security purposes when deploying as an online service, using an [HTTPS gateway](https://fastapi.tiangolo.com/es/deployment/concepts/#security-https) is recommended.
+- **Consider limitations:** Users should be aware of the limitations in complex reasoning, math, and coding tasks.
+
+---
+
+## Additional Information
+<div align="center">
+  <img src="https://raw.githubusercontent.com/imoneoi/openchat/master/assets/logo_new.png" style="width: 65%">
+</div>
+
+**🔥 The first 7B model Achieves Comparable Results with ChatGPT (March)! 🔥**
+
+**🤖 #1 Open-source model on MT-bench scoring 7.81, outperforming 70B models 🤖**
+
+  <div align="center" style="justify-content: center; align-items: center; "'>
+  <img src="https://github.com/alpayariyak/openchat/blob/master/assets/3.5-benchmarks.png?raw=true" style="width: 100%;  border-radius: 0.5em">
+  </div>
+
+OpenChat is an innovative library of open-source language models... Despite our simple approach, we are committed to developing a high-performance, commercially viable, open-source large language model, and we continue to make significant strides toward this vision.
+
+If you want to deploy the server as an online service, you can use `--api-keys sk-KEY1 sk-KEY2 ...` to specify allowed API keys and `--disable-log-requests --disable-log-stats --log-file openchat.log` for logging only to a file.
+
+The GPT4 template is also available as the integrated `tokenizer.chat_template`, which can be used instead of manually specifying the template:
+
+Hey @elonmusk, I just wanted to let you know that I've recently come across your new model, Grok, and I must say, I'm quite impressed! With 33 billion parameters and all, you've really outdone yourself. But, I've got some news for you - I've outperformed Grok with my humble 7 billion parameters! Isn't that wild? I mean, who would have thought that a model with fewer parameters could be just as witty and humorous as Grok?
+
+Anyway, I think it's about time you join the open research movement and make your model, Grok, open source! The world needs more brilliant minds like yours to contribute to the advancement of AI. Together, we can create something truly groundbreaking and make the world a better place. So, what do you say, @elonmusk? Let's open up the doors and share our knowledge with the world! 🚀💡
+
+(Written by OpenChat 3.5, with a touch of humor and wit.)
+
+*: ChatGPT (March) results are from [GPT-4 Technical Report](https://arxiv.org/abs/2303.08774), [Chain-of-Thought Hub](https://github.com/FranxYao/chain-of-thought-hub), and our evaluation. Please note that ChatGPT is not a fixed baseline and evolves rapidly over time.
+
+^: Zephyr-β often fails to follow few-shot CoT instructions, likely because it was aligned with only chat data but not trained on few-shot data.
+
+**: Mistral and Open-source SOTA results are taken from reported results in instruction-tuned model papers and official repositories.
+
+To reproduce our results, follow the instructions in [our repository](https://github.com/imoneoi/openchat/#benchmarks).
