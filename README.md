@@ -44,7 +44,19 @@ The instruction for the checklist creation is available in `model_card_info_list
 
 ### Run LLM Jury
 #### Run Gemini 2.5 Pro Juror
+Run `relevance_verifier/gemini_relevance_verifier.py` to verify the sections of all the reorganized model cards. The verification results will be saved in ``.
+```bash
+python relevance_verifier/gemini_relevance_verifier.py
+```
 
 #### Run O4-mini Juror
+Run `relevance_verifier/o_mini_relevance_verifier.py` to verify the sections of all the reorganized model cards. The verification results will be saved in ``.
+```bash
+python relevance_verifier/o_mini_relevance_verifier.py
+```
 
 ### Run DeepSeek R1 Juror
+Run `relevance_verifier/deepseek_relevance_verifier.py` to verify the sections of all the reorganized model cards. The verification results will be saved in ``.
+```bash
+python relevance_verifier/deepseek_relevance_verifier.py
+```
